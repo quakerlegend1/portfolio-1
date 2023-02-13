@@ -1,2 +1,4 @@
-# portfolio-1
-Пет-проект-1 для портфолио(в процессе всё еще :)
+# portfolio-1 Frontend Developer
+-HTML
+-Javascript
+-CSS
