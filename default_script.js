@@ -4,6 +4,9 @@ const element = document.querySelectorAll(".element");
 let about_section = document.querySelector(".about");
 let img_stat = document.querySelector(".img-stat");
 let info = document.querySelector(".info");
+let burgerNav = document.querySelector(".burger-navigation");
+let burgerButton = document.querySelector(".burger-menu");
+burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";})
 // document.onload=about_section.style.visibility="hidden";
 
 // function improveFighters() {
