@@ -18,14 +18,14 @@ html {
 }
 
 body {
-    background: #beb9b9a6;
+    background: #fffffff1;
 }
 
 .header {
     column-gap: 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #aeafaae1;
+    background-color: #767770e1;
     background-image: url(./images/detective_penguin.svg);
     background-repeat: no-repeat;
     background-position: 96%;
@@ -172,7 +172,7 @@ body {
 }
 
 .element {
-    border: 3px outset white;
+    border: 3px outset #f5f0f0;
     flex: 1 1 auto;
     transition: background-image 0.5s;
     
@@ -210,12 +210,6 @@ body {
     cursor:pointer;
 }
 
-/* @media all and (min-width:1200px) {
-  .elements {
-    width: 1300px;
-  }
-} */
-
 @keyframes text_t {
 from {
     
@@ -230,7 +224,7 @@ from {
 
 }
 
-/* .about {
+.about {
     color:rgba(255, 255, 255, 0.979);
     font-size: large;
     position: absolute;
@@ -245,21 +239,21 @@ from {
     background-color: rgb(1, 9, 17);
     display:flex;
     
-} */
+}
 
-/* .img-stat {
+.img-stat {
     border: 2px solid rgba(255, 0, 0, 0.76);
     margin-right: 10px;
     
-} */
+}
 
-/* .info {
+.info {
     align-content: center;
     text-align:justify;
     white-space: pre-line;
     overflow: auto;
     padding-right: 10px;
-} */
+}
 
 #footer {
     background-color:rgb(240, 168, 12);
