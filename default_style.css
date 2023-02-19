@@ -18,14 +18,14 @@ html {
 }
 
 body {
-    background: #c7c5c5a6;
+    background: #beb9b9a6;
 }
 
 .header {
     column-gap: 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #1ab828b4;
+    background-color: #aeafaae1;
     background-image: url(./images/detective_penguin.svg);
     background-repeat: no-repeat;
     background-position: 96%;
@@ -87,7 +87,7 @@ body {
 }
 
 .header__list li {
-    text-shadow: rgb(12, 71, 148) 0px 1px 10px;
+    text-shadow: rgb(2, 13, 27) 0px 1px 10px;
     
 }
 
@@ -184,9 +184,6 @@ body {
     object-fit: scale-down;
     margin-right: auto;
     margin-left: auto;
-    
-    /* position: relative; */
-    /* margin-top: 5%; */
 }
 
 .about_btn { 
