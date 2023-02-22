@@ -168,7 +168,7 @@ body {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    
+    position: relative;
 }
 
 .element {
@@ -228,32 +228,27 @@ from {
     color:rgba(255, 255, 255, 0.979);
     font-size: large;
     position: absolute;
-    width: 50%;
-    height: 300px;
+    width: 100%;
+    height: 500px;
     border: 10px solid rgba(206, 194, 194, 0.514);
     border-radius: 20px;
     padding: 7px;
-    top: 50%;
+    left: 50%;
+    transform:translateX(-50%);
+    top: 50px;
     align-self: center;
-    flex-direction: row;
-    background-color: rgb(1, 9, 17);
-    display:flex;
-    
-}
-
-.img-stat {
-    border: 2px solid rgba(255, 0, 0, 0.76);
-    margin-right: 10px;
+    background-color: rgb(67, 83, 99);
     
 }
 
 .info {
     align-content: center;
-    text-align:justify;
+    text-align: justify;
     white-space: pre-line;
     overflow: auto;
-    padding-right: 10px;
 }
+
+
 
 #footer {
     background-color:rgb(240, 168, 12);

@@ -3,10 +3,11 @@ const elements = document.querySelector(".elements");
 const element = document.querySelectorAll(".element");
 let about_section = document.querySelector(".about");
 let img_stat = document.querySelector(".img-stat");
-let info = document.querySelector(".info");
+let info = document.querySelector(".info").querySelectorAll("li");
 let burgerNav = document.querySelector(".burger-navigation");
 let burgerButton = document.querySelector(".burger-menu");
 burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";})
+
 // document.onload=about_section.style.visibility="hidden";
 
 // function improveFighters() {
@@ -41,28 +42,26 @@ burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";})
 
 // }
 // improveFighters();
-
-
 // fighters[0].querySelector("button").addEventListener("click",(e)=>
 // {document.body.style.backgroundColor=`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`});Менять цвет фона на рандомный по нажатию на кнопку
+let Xiaomi_Redmi_Note_11s = ["MediaTek Helio G96, частота: 2.05ГГц", " AMOLED, диагональ: 6.43', разрешение дисплея: 2400x1080, плотность пикселей - 409 PPI"];
 
-// function openCode(text_name) {
-//     var every = 0;
-    
-// function writeCode() {
-    
-//     info.textContent+=text_name[0][every];
-//     every++;
-    
-//     if(info.textContent.length >= text_name[0].length) {
-//         clearInterval(clearInt);
-        
-//     }
-// }
-// var clearInt =  setInterval(writeCode, 10);
-
-// };
    
+function writeCode(text_name) {
+        let increment = 0;
+        let result = "";
+        const interval_ID = setInterval(()=>{
+            result += text_name[0][increment];
+            increment++;
+            info[0].textContent = result;
+           if(result.length == text_name[0].length) {
+                clearInterval(interval_ID);
+                };
+        }, 50);
+}
+
+writeCode(Xiaomi_Redmi_Note_11s);
+
 
 
 
