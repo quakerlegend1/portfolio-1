@@ -225,8 +225,6 @@ from {
 }
 
 .about {
-    color:rgba(255, 255, 255, 0.979);
-    font-size: large;
     position: absolute;
     width: 100%;
     height: 500px;
@@ -242,11 +240,13 @@ from {
 }
 
 .info {
-    align-content: center;
-    text-align: justify;
-    white-space: pre-line;
     overflow: auto;
 }
+
+.info_text {
+    
+}
+
 
 
 

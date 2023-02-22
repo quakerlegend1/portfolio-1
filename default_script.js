@@ -3,7 +3,8 @@ const elements = document.querySelector(".elements");
 const element = document.querySelectorAll(".element");
 let about_section = document.querySelector(".about");
 let img_stat = document.querySelector(".img-stat");
-let info = document.querySelector(".info").querySelectorAll("li");
+let info = document.querySelector(".info");
+let info_text = info.firstElementChild;
 let burgerNav = document.querySelector(".burger-navigation");
 let burgerButton = document.querySelector(".burger-menu");
 burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";})
@@ -44,24 +45,24 @@ burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";})
 // improveFighters();
 // fighters[0].querySelector("button").addEventListener("click",(e)=>
 // {document.body.style.backgroundColor=`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`});Менять цвет фона на рандомный по нажатию на кнопку
-let Xiaomi_Redmi_Note_11s = ["MediaTek Helio G96, частота: 2.05ГГц", " AMOLED, диагональ: 6.43', разрешение дисплея: 2400x1080, плотность пикселей - 409 PPI"];
+let Xiaomi_Redmi_Note_11s = ["Процессор: MediaTek Helio G96, частота: 2.05ГГц. \nДисплей: AMOLED, диагональ: 6.43', разрешение дисплея: 2400x1080, плотность пикселей - 409 PPI. \nКамера: основная камера - 108Мп, сверхширокоугольная - 8Мп с углом обзора в 118°, макросъемка имеется, а также видеосъемка 1080p 1920x1080 30к/с; Селфи камера - 16Мп. \nАккумулятор и зарядка: 5000 мА ч, быстрая зарядка 33Вт, разъём - USB-C. \nРазмеры: 159,87x73,87x8,09 мм, вес - 179 г. \nЦена: 17000 руб."];
 
    
 function writeCode(text_name) {
         let increment = 0;
-        let result = "";
-        const interval_ID = setInterval(()=>{
-            result += text_name[0][increment];
-            increment++;
-            info[0].textContent = result;
-           if(result.length == text_name[0].length) {
-                clearInterval(interval_ID);
-                };
-        }, 50);
+        let interval_ID = setInterval(()=>{
+                info_text.textContent += text_name[0][increment]
+                increment++;
+                if (info_text.textContent.length >= text_name[0].length) {
+                        clearInterval(interval_ID);
+                }
+        },10)
 }
 
-writeCode(Xiaomi_Redmi_Note_11s);
+writeCode(Xiaomi_Redmi_Note_11s, 0);
 
 
 
-
+// if(result.length == text_name[0].length) {
+//                 clearInterval(interval_ID);
+//                 };
