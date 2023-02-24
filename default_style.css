@@ -237,6 +237,7 @@ from {
     align-self: center;
     background-color: rgba(71, 141, 211, 0.952);
     overflow: auto;
+    display: none;
 }
 
 .info {
@@ -253,6 +254,9 @@ from {
     
 }
 
+.info__text::first-letter{
+
+}
 
 
 
