@@ -1,6 +1,7 @@
+window.onbeforeunload = function () {window.scrollTo(0, 0)}; // при обновлении страницы, перематывать её в самый верх, в искходное состояние
 const elements = document.querySelector(".elements");
 const element = document.querySelectorAll(".element");
-const element_Buttons = elements.querySelectorAll(".about_btn");
+const about_buttons = document.querySelectorAll(".about_btn");
 let about_section = document.querySelector(".about");
 let info_text = document.querySelector(".info__text");
 let burgerNav = document.querySelector(".burger-navigation");
@@ -17,8 +18,8 @@ const Xiaomi_12S_Ultra = [`Процессор: Qualcomm Snapdragon 8 Plus Gen 1,
 const ZTE_Nubia_Red_Magic_7 = [`Процессор: Qualcomm Snapdragon 8 Gen 1, частота: 3ГГц.\nДисплей: AMOLED, диагональ: 6.8', разрешение дисплея: 1080x2400, плотность пикселей - 387 PPI.\nКамера: основная камера - 64Мп, сверхширокоугольная - 8Мп с углом обзора в 120°, макросъемка - 2Мп, видеосъемка 8K/30fps, 4K/60fps, 1080p/60fps, cелфи камера - 8Мп.\nАккумулятор и зарядка: 4500 мАч, быстрая зарядка - 99% за 30 минут, разъём - USB-C.\nРазмеры: 170.5x78.3x9.5 мм, вес - 215 г.\nЦена:60000 руб.`];
 
 burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";})
-// функция, которая создает эффект печатающей машинки, в зависимости от аргумента меняется наполнение элемента.
-function writeCode(text_name) { 
+
+function writeCode(text_name) { // функция, которая создает эффект печатной машинки, в зависимости от аргумента меняется наполнение элемента.
         let increment = 0;
         let interval_ID = setInterval(()=>{
                 info_text.textContent += text_name[0][increment]
@@ -26,42 +27,47 @@ function writeCode(text_name) {
                 
                 if (info_text.textContent.length >= text_name[0].length) {
                         clearInterval(interval_ID);
-                        
+                        about_buttons.forEach((element)=>{element.style.pointerEvents="auto"})
                 }
+                else {
+                        about_buttons.forEach((element)=>{element.style.pointerEvents="none"})
+                }
+
         },10)    
+       
 }
 
-for (let i = 0; i < element_Buttons.length; i++) {
-        element_Buttons[i].addEventListener("click",(e)=>{about_section.style.display="block";/*elements.style.pointerEvents = "none"*/})
+for (let i = 0; i < about_buttons.length; i++) {
+        about_buttons[i].addEventListener("click",(e)=>{about_section.style.display="block";info_text.textContent = "";about_buttons[i].style.backgroundColor="pink";})
 
-        if (element_Buttons[i].hasAttribute("data-Xiaomi-Redmi-Note-11S")) {
-                element_Buttons[i].addEventListener("click",()=>{writeCode(Xiaomi_Redmi_Note_11s)})
+        if (about_buttons[i].hasAttribute("data-Xiaomi-Redmi-Note-11S")) {
+                about_buttons[i].addEventListener("click",()=>{writeCode(Xiaomi_Redmi_Note_11s)})
         }
-        if (element_Buttons[i].hasAttribute("data-Apple-iPhone-14-pro")) {
-                element_Buttons[i].addEventListener("click",()=>{writeCode(Apple_Iphone_14_Pro)})
+        if(about_buttons[i].hasAttribute("data-Apple-iPhone-14-pro")) {
+                about_buttons[i].addEventListener("click",()=>{writeCode(Apple_Iphone_14_Pro)})
         }
-         if (element_Buttons[i].hasAttribute("data-Samsung-Galaxy-Z-Fold-4")) {
-                 element_Buttons[i].addEventListener("click",()=>{writeCode(Samsung_Galaxy_Z_Fold_4)})
+         if (about_buttons[i].hasAttribute("data-Samsung-Galaxy-Z-Fold-4")) {
+                 about_buttons[i].addEventListener("click",()=>{writeCode(Samsung_Galaxy_Z_Fold_4)})
          }
-         if (element_Buttons[i].hasAttribute("data-Samsung-Galaxy-S-22")) {
-                 element_Buttons[i].addEventListener("click",()=>{writeCode(Samsung_Galaxy_S_22)})
+         if (about_buttons[i].hasAttribute("data-Samsung-Galaxy-S-22")) {
+                 about_buttons[i].addEventListener("click",()=>{writeCode(Samsung_Galaxy_S_22)})
          }
-         if (element_Buttons[i].hasAttribute("data-Xiaomi-12T-Pro")) {
-                 element_Buttons[i].addEventListener("click",()=>{writeCode(Xiaomi_12T_Pro)})
+         if (about_buttons[i].hasAttribute("data-Xiaomi-12T-Pro")) {
+                 about_buttons[i].addEventListener("click",()=>{writeCode(Xiaomi_12T_Pro)})
          }
-         if (element_Buttons[i].hasAttribute("data-Asus-Rog-Phone-6-Pro")) {
-                 element_Buttons[i].addEventListener("click",()=>{writeCode(Asus_Rog_Phone_6_Pro)})
+         if (about_buttons[i].hasAttribute("data-Asus-Rog-Phone-6-Pro")) {
+                 about_buttons[i].addEventListener("click",()=>{writeCode(Asus_Rog_Phone_6_Pro)})
          }
-         if (element_Buttons[i].hasAttribute("data-Motorola-Razr-2022")) {
-                 element_Buttons[i].addEventListener("click",()=>{writeCode(Motorola_Razr_2022)})
+         if (about_buttons[i].hasAttribute("data-Motorola-Razr-2022")) {
+                 about_buttons[i].addEventListener("click",()=>{writeCode(Motorola_Razr_2022)})
          }
-         if (element_Buttons[i].hasAttribute("data-Huawei-Mate-50-Pro")) {
-                element_Buttons[i].addEventListener("click",()=>{writeCode(Huawei_Mate_50_Pro)})
+         if (about_buttons[i].hasAttribute("data-Huawei-Mate-50-Pro")) {
+                about_buttons[i].addEventListener("click",()=>{writeCode(Huawei_Mate_50_Pro)})
         }
-        if (element_Buttons[i].hasAttribute("data-Xiaomi-12S-Ultra")) {
-                element_Buttons[i].addEventListener("click",()=>{writeCode(Xiaomi_12S_Ultra)})
+        if (about_buttons[i].hasAttribute("data-Xiaomi-12S-Ultra")) {
+                about_buttons[i].addEventListener("click",()=>{writeCode(Xiaomi_12S_Ultra)})
         }
-        if (element_Buttons[i].hasAttribute("data-ZTE-Nubia-Red-Magic-7")) {
-                element_Buttons[i].addEventListener("click",()=>{writeCode(ZTE_Nubia_Red_Magic_7)})
+        if (about_buttons[i].hasAttribute("data-ZTE-Nubia-Red-Magic-7")) {
+                about_buttons[i].addEventListener("click",()=>{writeCode(ZTE_Nubia_Red_Magic_7)})
         }
 }
