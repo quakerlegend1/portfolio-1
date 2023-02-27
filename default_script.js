@@ -2,9 +2,7 @@ const elements = document.querySelector(".elements");
 const element = document.querySelectorAll(".element");
 const element_Buttons = elements.querySelectorAll(".about_btn");
 let about_section = document.querySelector(".about");
-let img_stat = document.querySelector(".img-stat");
-let info = document.querySelector(".info");
-let info_text = info.firstElementChild;
+let info_text = document.querySelector(".info__text");
 let burgerNav = document.querySelector(".burger-navigation");
 let burgerButton = document.querySelector(".burger-menu");
 const Xiaomi_Redmi_Note_11s = [`Процессор: MediaTek Helio G96, частота: 2.05ГГц.\nДисплей: AMOLED, диагональ: 6.43', разрешение дисплея: 2400x1080, плотность пикселей - 409 PPI.\nКамера: основная камера - 108Мп, сверхширокоугольная - 8Мп с углом обзора в 118°, макросъемка имеется, а также видеосъемка 1080p 1920x1080 30к/с, cелфи камера - 16Мп.\nАккумулятор и зарядка: 5000 мАч, быстрая зарядка 33Вт, разъём - USB-C.\nРазмеры: 159,87x73,87x8,09 мм, вес - 179 г.\nЦена: 17000 руб.`];
@@ -19,7 +17,7 @@ const Xiaomi_12S_Ultra = [`Процессор: Qualcomm Snapdragon 8 Plus Gen 1,
 const ZTE_Nubia_Red_Magic_7 = [`Процессор: Qualcomm Snapdragon 8 Gen 1, частота: 3ГГц.\nДисплей: AMOLED, диагональ: 6.8', разрешение дисплея: 1080x2400, плотность пикселей - 387 PPI.\nКамера: основная камера - 64Мп, сверхширокоугольная - 8Мп с углом обзора в 120°, макросъемка - 2Мп, видеосъемка 8K/30fps, 4K/60fps, 1080p/60fps, cелфи камера - 8Мп.\nАккумулятор и зарядка: 4500 мАч, быстрая зарядка - 99% за 30 минут, разъём - USB-C.\nРазмеры: 170.5x78.3x9.5 мм, вес - 215 г.\nЦена:60000 руб.`];
 
 burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";})
-
+// функция, которая создает эффект печатающей машинки, в зависимости от аргумента меняется наполнение элемента.
 function writeCode(text_name) { 
         let increment = 0;
         let interval_ID = setInterval(()=>{
@@ -30,12 +28,11 @@ function writeCode(text_name) {
                         clearInterval(interval_ID);
                         
                 }
-        },10)
-        
+        },10)    
 }
 
 for (let i = 0; i < element_Buttons.length; i++) {
-        element_Buttons[i].addEventListener("click",(e)=>{about_section.style.display="block"})
+        element_Buttons[i].addEventListener("click",(e)=>{about_section.style.display="block";/*elements.style.pointerEvents = "none"*/})
 
         if (element_Buttons[i].hasAttribute("data-Xiaomi-Redmi-Note-11S")) {
                 element_Buttons[i].addEventListener("click",()=>{writeCode(Xiaomi_Redmi_Note_11s)})
