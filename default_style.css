@@ -222,34 +222,36 @@ from {
 }
 
 .about {
+    height: 50vh;
+    min-width: 300px;
     position: fixed;
-    width: 50%;
-    height: 500px;
     left: 50%;
-    top:50%;
+    top: 50%;
     border: 12px ridge rgb(128, 133, 129);
     border-radius: 10px;
     padding: 7px;
     align-self: center;
-    background-color: rgba(71, 141, 211, 0.952);
+    background-color: rgba(6, 153, 97, 0.952);
     display: none;
     transform: translate(-50%, -50%);
     overflow: auto;
+    
 }
 
 .info {
+    padding: 5px;
+    border: 7px outset rgba(4, 168, 92, 0.801);
     
 }
 
 .info__text {
     
-    text-align: start;
     line-height: 1.5em;
-    font-family: 'Neucha', cursive;
-    font-size: 2em;
+    font-family: 'Neucha';
+    font-size: 1.9em;
     font-weight: 600;
-    white-space:pre-wrap;
-    
+    white-space: pre-wrap;
+    text-align: center;
 }
 
 .info__text::first-letter{
@@ -287,6 +289,10 @@ from {
         width: 145px;
         
     }
+
+    .info__text {
+        font-size: 1.7em;
+    }
 }
 
 @media all and (max-width: 960px) {
@@ -308,6 +314,10 @@ from {
 
     .header__list {
         font-size: 1.3em;
+    }
+
+    .info__text {
+        font-size: 1.6em;
     }
 }
 
@@ -333,6 +343,11 @@ from {
     .header__input {
        margin-left: auto;
     }
+
+    .info__text {
+        font-size: 1.3em;
+        text-align: center;
+    }
 }
 
 @media all and (max-width: 415px) {
@@ -345,5 +360,14 @@ from {
     }
     .about_btn {
        
+    }
+    .info__text {
+        font-family: Anton , cursive;
+        font-size: 1em;
+        line-height: 1.4em;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        
+        
     }
 }
