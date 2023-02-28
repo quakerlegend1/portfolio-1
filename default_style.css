@@ -9,7 +9,7 @@
     padding:0;
 }
 
- a {
+ a:-webkit-any-link {
     text-decoration: none;
     color: inherit;
 }
@@ -19,7 +19,7 @@ img {
 }
 
 html {
-  
+  width: 100%;
 }
 
 body {
