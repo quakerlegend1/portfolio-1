@@ -9,7 +9,12 @@
     padding:0;
 }
 
-*img {
+ a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
     display: block;
 }
 
@@ -18,14 +23,14 @@ html {
 }
 
 body {
-    background: #fffffff1;
+    background: #e0e0e0f1;
 }
 
 .header {
     column-gap: 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #767770e1;
+    background-color: rgba(214, 214, 214, 0.938);
     background-image: url(./images/detective_penguin.svg);
     background-repeat: no-repeat;
     background-position: 96%;
@@ -34,6 +39,7 @@ body {
     justify-content: space-between;
     align-items: center;
     max-width: 1280px;
+    border: 3px ridge rgb(215, 218, 215);
 }
 
 .header__main {
@@ -47,15 +53,18 @@ body {
     object-fit: scale-down;
     display: block;
     height: 100%;
+    
 }
 
 .text-wrapper {
     display: flex;
+}
+
+.text-wrapper-link {
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
     align-items: flex-start; 
-    
-    
+    justify-content: center; 
 }
 
 .text-wrapper-max {
@@ -63,8 +72,11 @@ body {
     font-family: 'Rampart One', cursive;
     white-space: nowrap;
     align-items: center;
-    color: rgb(0, 10, 6);
-    
+    color: rgb(0, 8, 5);
+}
+
+.text-wrapper:hover {
+    text-shadow: 0 0 10px rgba(17, 80, 38, 0.952);
 }
 
 .text-wrapper-min {
@@ -227,7 +239,7 @@ from {
     position: fixed;
     left: 50%;
     top: 50%;
-    border: 12px ridge rgb(128, 133, 129);
+    border: 12px ridge rgb(11, 112, 16);
     border-radius: 10px;
     padding: 7px;
     align-self: center;
@@ -245,7 +257,7 @@ from {
 }
 
 .info__text {
-    
+    color: rgb(10, 2, 2);
     line-height: 1.5em;
     font-family: 'Neucha';
     font-size: 1.9em;
@@ -321,7 +333,7 @@ from {
     }
 }
 
-@media all and (max-width: 867px) {
+@media all and (max-width: 890px) {
     .header {
        justify-content: normal;
        
