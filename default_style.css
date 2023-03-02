@@ -24,7 +24,7 @@ html {
 
 body {
     background: #e0e0e0f1;
-    cursor: url("./images/curs.png"),auto;
+    cursor: url(./images/curs.png),auto;
 }
 
 .header {
