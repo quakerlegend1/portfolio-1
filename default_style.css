@@ -24,7 +24,7 @@ html {
 
 body {
     background: #e0e0e0f1;
-    cursor: url("./images/curs.png"),auto;
+    cursor: url(./images/curs.png),auto;
 }
 
 .header {
@@ -117,20 +117,41 @@ body {
 }
 
 .carousel {
-border: 1px solid red;
-max-width: 1000px;
-height: 400px;
-margin: 30px auto 30px auto;
-display: flex;
-flex-direction: row;
+    max-width: 1000px;
+    margin: 30px auto 30px;
+    overflow: hidden;
+    white-space: nowrap;
+/* text-align: center; */
+    font-size: 0;
+    position: relative;
 }
 
-.carousel div {
+.left-arrow,.right-arrow {
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+   
+}
+
+.right-arrow {
+    right: 0;
+    top: 50%;
+}
+
+.left-arrow {
+    top: 50%;
+    left: 0;
+}
+
+.carousel__slide {
+    display: inline-block;
     
 }
 
-.carousel img {
-    height: 100%;
+.carousel__slide img {
+   width: 100%;
+   
 }
 
 .burger-menu {
@@ -380,6 +401,10 @@ flex-direction: row;
 
     .info__text {
         font-size: 1.6em;
+    }
+
+    .carousel {
+        /* width: 860px; */
     }
 }
 

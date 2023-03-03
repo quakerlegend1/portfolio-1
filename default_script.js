@@ -24,8 +24,12 @@ close_about_btn.addEventListener("click",()=>{about_section.style.display="none"
 burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";}) // бургер меню скрыт, но по нажатию откроется
 header__img.addEventListener("mouseover",(e)=>{e.target.src="./images/logo_hover.png"});
 header__img.addEventListener("mouseout",(e)=>{e.target.src="./images/logo.png"}); // меняет изображение при наведении и отводе курсора
-
-
+let right_arrow = document.querySelector(".right-arrow");
+let slides = document.querySelectorAll(".carousel__slide");
+function carousel() {
+        right_arrow.addEventListener("click", ()=>{slides.forEach((el)=> {el.style.transform +="translateX(-1000px)"})} )
+}
+carousel();
 function writeCode(text_name) { // функция, которая создает эффект печатной машинки, в зависимости от аргумента меняется наполнение элемента.
         let increment = 0;
         let interval_ID = setInterval(()=>{
