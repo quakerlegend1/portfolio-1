@@ -146,7 +146,7 @@ body {
 
 .carousel__slide {
     flex: 1 0 100%;
-    
+    transition: transform 0.8s;
 }
 
 .carousel__slide img {
