@@ -37,7 +37,7 @@ function carousel() { // функция для слайдера(карусели
         position = 0;
 
         setInterval(()=>{if(position >= minStep*4) {position = 0} else {position += minStep} // автоматическая прокрутка слайдов
-        carouselTape.style.transform = `translateX(-${position}px)`},2000); 
+        carouselTape.style.transform = `translateX(-${position}px)`},3000); 
 
         right_arrow.addEventListener("click",(e)=>{
                 position += minStep
