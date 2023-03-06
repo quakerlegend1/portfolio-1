@@ -197,10 +197,10 @@ body {
     font-size: 1.5em;
     position: absolute;
     z-index: 10;
-    width: 100%;
     top: 70px;
     height: 100%; 
     display: none;
+    width: 100%;
 }
 
 .burger-navigation__flex {
@@ -208,11 +208,13 @@ body {
     flex-direction: column;
     height: 100%;
     list-style-type: none;
+    
 }
 
 .burger-navigation__flex li {
     border: 1px solid rgba(104, 94, 94, 0.473);
     padding: 10px 0 10px 10px;
+    
 }
 
 .elements {
@@ -462,6 +464,10 @@ body {
     }
 
     .text-wrapper-min {
+        
+    }
+
+    .burger-navigation {
         
     }
 

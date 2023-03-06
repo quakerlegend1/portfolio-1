@@ -26,7 +26,7 @@ const Xiaomi_12S_Ultra = [`Процессор: Qualcomm Snapdragon 8 Plus Gen 1,
 const ZTE_Nubia_Red_Magic_7 = [`Процессор: Qualcomm Snapdragon 8 Gen 1, частота: 3ГГц.\nДисплей: AMOLED, диагональ: 6.8', разрешение дисплея: 1080x2400, плотность пикселей - 387 PPI.\nКамера: основная камера - 64Мп, сверхширокоугольная - 8Мп с углом обзора в 120°, макросъемка - 2Мп, видеосъемка 8K/30fps, 4K/60fps, 1080p/60fps, cелфи камера - 8Мп.\nАккумулятор и зарядка: 4500 мАч, быстрая зарядка - 99% за 30 минут, разъём - USB-C.\nРазмеры: 170.5x78.3x9.5 мм, вес - 215 г.\nЦена: 60000 руб.`];
 
 close_about_btn.addEventListener("click",()=>{about_section.style.display="none"});//закрывает окно описания товара
-burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";}) // бургер меню скрыт, но по нажатию откроется
+burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";document.body.style.overflow="hidden"}) // бургер меню скрыт, но по нажатию откроется
 header__img.addEventListener("mouseover",(e)=>{e.target.src="./images/logo_hover.png"});
 header__img.addEventListener("mouseout",(e)=>{e.target.src="./images/logo.png"}); // меняет изображение в хедере при наведении и отводе курсора
 
@@ -35,6 +35,10 @@ header__img.addEventListener("mouseout",(e)=>{e.target.src="./images/logo.png"})
 function carousel() { // функция для слайдера(карусели) адаптивная с изменяющимся transition(плавностью перехода слайдов)
         let minStep = carouselContainer.offsetWidth;
         position = 0;
+
+        setInterval(()=>{if(position >= minStep*4) {position = 0} else {position += minStep} // автоматическая прокрутка слайдов
+        carouselTape.style.transform = `translateX(-${position}px)`},2000); 
+
         right_arrow.addEventListener("click",(e)=>{
                 position += minStep
                 if(position > minStep*4) {position = 0;carouselTape.style.transition="0s"}
@@ -42,7 +46,7 @@ function carousel() { // функция для слайдера(карусели
                 carouselTape.style.transform = `translateX(-${position}px)`
                 
         });
-                
+        
         left_arrow.addEventListener("click",(e)=>{
                 position-= minStep
                 if(position < 0) {position = minStep*4;carouselTape.style.transition="0s"}
