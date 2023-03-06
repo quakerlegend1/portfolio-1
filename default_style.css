@@ -19,7 +19,8 @@ img {
 }
 
 html {
-  width: 100%;
+  
+  
 }
 
 body {
@@ -115,6 +116,7 @@ body {
     padding: 5px;
     margin-right: 5px;
     opacity: 80%;
+    
 }
 
 .carousel {
@@ -435,7 +437,6 @@ body {
 @media all and (max-width: 415px) {
 
     html {
-        /* width: fit-content; */
         width: fit-content;
         
     }
@@ -445,7 +446,7 @@ body {
     }
 
     .header {
-       
+        
     }
 
     .header__main {
@@ -465,7 +466,7 @@ body {
     }
 
     .elements {
-       
+        
     }
 
     .info__text {
