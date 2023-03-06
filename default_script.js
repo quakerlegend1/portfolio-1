@@ -11,7 +11,9 @@ let close_about_btn = document.querySelector(".close-btn");
 let loading = document.querySelector(".loading");
 let right_arrow = document.querySelector(".right-arrow");
 let left_arrow = document.querySelector(".left-arrow");
+let carouselContainer = document.querySelector(".carousel");
 let slides = document.querySelectorAll(".carousel__slide");
+let carouselTape = document.querySelector(".carousel__tape");
 const Xiaomi_Redmi_Note_11s = [`Процессор: MediaTek Helio G96, частота: 2.05ГГц.\nДисплей: AMOLED, диагональ: 6.43', разрешение дисплея: 2400x1080, плотность пикселей - 409 PPI.\nКамера: основная камера - 108Мп, сверхширокоугольная - 8Мп с углом обзора в 118°, макросъемка имеется, а также видеосъемка 1080p 1920x1080 30к/с, cелфи камера - 16Мп.\nАккумулятор и зарядка: 5000 мАч, быстрая зарядка 33Вт, разъём - USB-C.\nРазмеры: 159,87x73,87x8,09 мм, вес - 179 г.\nЦена: 17000 руб.`];
 const Apple_Iphone_14_Pro = [`Процессор: Apple A16 Bionic, частота: 3.46ГГц.\nДисплей: OLED, диагональ: 6.1', разрешение дисплея: 1179x2556, плотность пикселей - 460 PPI.\nКамера: основная камера - 48Мп, сверхширокоугольная - 12Мп с углом обзора в 120°, видеосъемка 2160p (4k) 60к/с, cелфи камера - 12Мп.\nАккумулятор и зарядка: 3200 мАч, быстрая зарядка - имеется(60% за 30 минут), разъём - Apple Lightning.\nРазмеры: 147,5x71,5x7,85 мм, вес - 206 г.\nЦена: 94000 руб.`];
 const Samsung_Galaxy_Z_Fold_4 = [`Процессор: Qualcomm SM8475 Snapdragon 8+ Gen 1, частота: 3.18ГГц.\nДисплей: Dynamic AMOLED 2X, диагональ: 7.6', разрешение дисплея: 2176x1812, плотность пикселей - 374 PPI.\nКамера: основная камера - 50Мп, видеосъемка UHD 8K (7680 x 4320) для 24 кадров в секунду, cелфи камера - 10Мп.\nАккумулятор и зарядка: 4400 мАч, разъём - USB-C.\nРазмеры: 155,1x130,1x6,3 мм - в разложенном виде и 155.1 x 67.1 x 15.8 - в сложенном виде, вес - 263 г.\nЦена: 150000 руб.`];
@@ -31,13 +33,24 @@ header__img.addEventListener("mouseout",(e)=>{e.target.src="./images/logo.png"})
 
 
 function carousel() { // функция для слайдера(карусели) адаптивная
-        let slide_width = slides[0].offsetWidth;
-        right_arrow.addEventListener("click", ()=>{slides.forEach((el)=>{el.style.transform += `translateX(-${slide_width}px)`})});
-        left_arrow.addEventListener("click", ()=>{slides.forEach((el)=>{el.style.transform += `translateX(${slide_width}px)`})});
-        
-        
+        let minStep = carouselContainer.offsetWidth;
+        position = 0;
+        right_arrow.addEventListener("click",(e)=>{
+                position += minStep
+                if(position > minStep*4) {position = 0}
+                carouselTape.style.transform = `translateX(-${position}px)`
+                
+        });
+                
+        left_arrow.addEventListener("click",(e)=>{
+                position-= minStep
+                if(position < 0) {position = minStep*4}
+                 carouselTape.style.transform = `translateX(-${position}px)`
+        });
+        // 
+        // if(position == carouselWidth*(slides.length-1)){right_arrow.style.pointerEvents="none"};
 }
-carousel();
+carousel();  
 
 function writeCode(text_name) { // функция, которая создает эффект печатной машинки, в зависимости от аргумента меняется наполнение элемента.
         let increment = 0;
