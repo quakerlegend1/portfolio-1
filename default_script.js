@@ -32,23 +32,24 @@ header__img.addEventListener("mouseout",(e)=>{e.target.src="./images/logo.png"})
 
 
 
-function carousel() { // функция для слайдера(карусели) адаптивная
+function carousel() { // функция для слайдера(карусели) адаптивная с изменяющимся transition(плавностью перехода слайдов)
         let minStep = carouselContainer.offsetWidth;
         position = 0;
         right_arrow.addEventListener("click",(e)=>{
                 position += minStep
-                if(position > minStep*4) {position = 0}
+                if(position > minStep*4) {position = 0;carouselTape.style.transition="0s"}
+                else {carouselTape.style.transition="0.5s"}
                 carouselTape.style.transform = `translateX(-${position}px)`
                 
         });
                 
         left_arrow.addEventListener("click",(e)=>{
                 position-= minStep
-                if(position < 0) {position = minStep*4}
+                if(position < 0) {position = minStep*4;carouselTape.style.transition="0s"}
+                else {carouselTape.style.transition="0.5s"}
                  carouselTape.style.transform = `translateX(-${position}px)`
         });
-        // 
-        // if(position == carouselWidth*(slides.length-1)){right_arrow.style.pointerEvents="none"};
+        
 }
 carousel();  
 

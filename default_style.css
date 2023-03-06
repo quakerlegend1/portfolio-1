@@ -127,26 +127,28 @@ body {
 
 .carousel__tape {
     display: flex;
-    
+    transition: 0.5s;
     
 }
 
 .left-arrow,.right-arrow {
     position: absolute;
     z-index: 1;
-    width: 50px;
-    height: 50px;
-   
+    width: 80px;
+    height: 80px;
+    opacity: 80%;
 }
 
 .right-arrow {
     right: 0;
-    top: 50%;
+    top: 45%;
+    
 }
 
 .left-arrow {
-    top: 50%;
+    top: 45%;
     left: 0;
+    
 }
 
 .carousel__slide {
@@ -160,16 +162,17 @@ body {
 
 .burger-menu {
     position: relative;
-    width: 35px;
+    width: 30px;
     height: 20px;
-    margin-left: 11px;
+    margin-left: 6px;
+    margin-right: 6px;
     display: none;
 }
 
 .burger-menu div {
     position: absolute;
     height: 3px;
-    width: 27px;
+    width: 100%;
     background-color: rgb(3, 3, 7);
 }
 
@@ -306,12 +309,12 @@ body {
     content: "";
     background-image: url(./images/close_btn.png);
     background-size: cover;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     top: 0;
     right:0;
     cursor: pointer;
-    opacity: 85%;
+    opacity: 75%;
 }
 
 .info {
@@ -422,19 +425,49 @@ body {
         font-size: 1.3em;
         text-align: center;
     }
+
+    .left-arrow,.right-arrow {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 @media all and (max-width: 415px) {
 
     html {
         /* width: fit-content; */
+        width: fit-content;
+        
     }
+
+    body {
+        
+    }
+
     .header {
        
     }
-    .about_btn {
+
+    .header__main {
+
+    }
+
+    .header__input {
+        
+     }
+
+     .text-wrapper-max {
+        
+    }
+
+    .text-wrapper-min {
+        
+    }
+
+    .elements {
        
     }
+
     .info__text {
         font-family: Anton , cursive;
         font-size: 1em;
@@ -443,5 +476,15 @@ body {
         letter-spacing: 0.5px;
         
         
+    }
+
+    .close-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .left-arrow,.right-arrow {
+        width: 45px;
+        height: 45px;
     }
 }
