@@ -2,18 +2,18 @@ window.onbeforeunload = function () {window.scrollTo(0, 0)}; // при обно�
 const elements = document.querySelector(".elements");
 const element = document.querySelectorAll(".element");
 const about_buttons = document.querySelectorAll(".about_btn");
-let about_section = document.querySelector(".about");
-let info_text = document.querySelector(".info__text");
-let burgerNav = document.querySelector(".burger-navigation");
-let burgerButton = document.querySelector(".burger-menu");
-let header__img = document.querySelector(".header__img");
-let close_about_btn = document.querySelector(".close-btn");
-let loading = document.querySelector(".loading");
-let right_arrow = document.querySelector(".right-arrow");
-let left_arrow = document.querySelector(".left-arrow");
-let carouselContainer = document.querySelector(".carousel");
-let slides = document.querySelectorAll(".carousel__slide");
-let carouselTape = document.querySelector(".carousel__tape");
+const about_section = document.querySelector(".about");
+const info_text = document.querySelector(".info__text");
+const burgerNav = document.querySelector(".burger-navigation");
+const burgerButton = document.querySelector(".burger-menu");
+const header__img = document.querySelector(".header__img");
+const close_about_btn = document.querySelector(".close-btn");
+const loading = document.querySelector(".loading");
+const right_arrow = document.querySelector(".right-arrow");
+const left_arrow = document.querySelector(".left-arrow");
+const carouselContainer = document.querySelector(".carousel");
+const slides = document.querySelectorAll(".carousel__slide");
+const carouselTape = document.querySelector(".carousel__tape");
 const Xiaomi_Redmi_Note_11s = [`Процессор: MediaTek Helio G96, частота: 2.05ГГц.\nДисплей: AMOLED, диагональ: 6.43', разрешение дисплея: 2400x1080, плотность пикселей - 409 PPI.\nКамера: основная камера - 108Мп, сверхширокоугольная - 8Мп с углом обзора в 118°, макросъемка имеется, а также видеосъемка 1080p 1920x1080 30к/с, cелфи камера - 16Мп.\nАккумулятор и зарядка: 5000 мАч, быстрая зарядка 33Вт, разъём - USB-C.\nРазмеры: 159,87x73,87x8,09 мм, вес - 179 г.\nЦена: 17000 руб.`];
 const Apple_Iphone_14_Pro = [`Процессор: Apple A16 Bionic, частота: 3.46ГГц.\nДисплей: OLED, диагональ: 6.1', разрешение дисплея: 1179x2556, плотность пикселей - 460 PPI.\nКамера: основная камера - 48Мп, сверхширокоугольная - 12Мп с углом обзора в 120°, видеосъемка 2160p (4k) 60к/с, cелфи камера - 12Мп.\nАккумулятор и зарядка: 3200 мАч, быстрая зарядка - имеется(60% за 30 минут), разъём - Apple Lightning.\nРазмеры: 147,5x71,5x7,85 мм, вес - 206 г.\nЦена: 94000 руб.`];
 const Samsung_Galaxy_Z_Fold_4 = [`Процессор: Qualcomm SM8475 Snapdragon 8+ Gen 1, частота: 3.18ГГц.\nДисплей: Dynamic AMOLED 2X, диагональ: 7.6', разрешение дисплея: 2176x1812, плотность пикселей - 374 PPI.\nКамера: основная камера - 50Мп, видеосъемка UHD 8K (7680 x 4320) для 24 кадров в секунду, cелфи камера - 10Мп.\nАккумулятор и зарядка: 4400 мАч, разъём - USB-C.\nРазмеры: 155,1x130,1x6,3 мм - в разложенном виде и 155.1 x 67.1 x 15.8 - в сложенном виде, вес - 263 г.\nЦена: 150000 руб.`];
@@ -26,11 +26,14 @@ const Xiaomi_12S_Ultra = [`Процессор: Qualcomm Snapdragon 8 Plus Gen 1,
 const ZTE_Nubia_Red_Magic_7 = [`Процессор: Qualcomm Snapdragon 8 Gen 1, частота: 3ГГц.\nДисплей: AMOLED, диагональ: 6.8', разрешение дисплея: 1080x2400, плотность пикселей - 387 PPI.\nКамера: основная камера - 64Мп, сверхширокоугольная - 8Мп с углом обзора в 120°, макросъемка - 2Мп, видеосъемка 8K/30fps, 4K/60fps, 1080p/60fps, cелфи камера - 8Мп.\nАккумулятор и зарядка: 4500 мАч, быстрая зарядка - 99% за 30 минут, разъём - USB-C.\nРазмеры: 170.5x78.3x9.5 мм, вес - 215 г.\nЦена: 60000 руб.`];
 
 close_about_btn.addEventListener("click",()=>{about_section.style.display="none"});//закрывает окно описания товара
-burgerButton.addEventListener("click",()=> {burgerNav.style.display="block";document.body.style.overflow="hidden"}) // бургер меню скрыт, но по нажатию откроется
+
+burgerButton.addEventListener("click",()=> {burgerNav.classList.toggle("burger-navigation-open")
+if(burgerNav.classList.contains("burger-navigation-open")){document.documentElement.style.overflow="hidden"}
+else{document.documentElement.style.overflow="auto"}});
+// бургер меню скрыт по дефолту, по первому клику - откроется, по - второму - закроется(toggle),также запретить прокрутку страницы при open.
+
 header__img.addEventListener("mouseover",(e)=>{e.target.src="./images/logo_hover.png"});
 header__img.addEventListener("mouseout",(e)=>{e.target.src="./images/logo.png"}); // меняет изображение в хедере при наведении и отводе курсора
-
-
 
 function carousel() { // функция для слайдера(карусели) адаптивная с изменяющимся transition(плавностью перехода слайдов)
         let minStep = carouselContainer.offsetWidth;
@@ -53,7 +56,6 @@ function carousel() { // функция для слайдера(карусели
                 else {carouselTape.style.transition="0.5s"}
                  carouselTape.style.transform = `translateX(-${position}px)`
         });
-        
 }
 carousel();  
 
@@ -71,10 +73,7 @@ function writeCode(text_name) { // функция, которая создает
                 else {
                         about_buttons.forEach((element)=>{element.style.pointerEvents="none"})
                 }
-                
-
-        },10)    
-        
+        },10)      
 }
 
 
