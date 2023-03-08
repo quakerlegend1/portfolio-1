@@ -455,6 +455,11 @@ body {
         width: 60px;
         height: 60px;
     }
+
+    .close-btn {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 @media all and (max-width: 415px) {
