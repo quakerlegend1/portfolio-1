@@ -27,9 +27,10 @@ const ZTE_Nubia_Red_Magic_7 = [`Процессор: Qualcomm Snapdragon 8 Gen 1,
 
 close_about_btn.addEventListener("click",()=>{about_section.style.display="none"});//закрывает окно описания товара
 
-burgerButton.addEventListener("click",()=> {burgerNav.classList.toggle("burger-navigation-open")
+burgerButton.addEventListener("click",(e)=> {burgerNav.classList.toggle("burger-navigation-open")
+burgerButton.classList.toggle("burger-menu-open")
 if(burgerNav.classList.contains("burger-navigation-open")){document.documentElement.style.overflow="hidden"}
-else{document.documentElement.style.overflow="auto"}});
+else{document.documentElement.style.overflow="visible"}});
 // бургер меню скрыт по дефолту, по первому клику - откроется, по - второму - закроется(toggle),также запретить прокрутку страницы при open.
 
 header__img.addEventListener("mouseover",(e)=>{e.target.src="./images/logo_hover.png"});
