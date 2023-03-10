@@ -22,11 +22,6 @@ img {
     display: block;
 }
 
-html {
-  
-  
-}
-
 body {
     background: #fdfdfd;
     cursor: url(./images/curs.png),auto;
@@ -108,7 +103,6 @@ body {
 
 .header__list li {
     text-shadow: rgb(2, 13, 27) 0px 1px 10px;
-    
 }
 
 .header__list li:hover {
@@ -122,7 +116,6 @@ body {
     padding: 5px;
     margin-right: 5px;
     opacity: 80%;
-    
 }
 
 .carousel {
@@ -136,7 +129,6 @@ body {
 .carousel__tape {
     display: flex;
     transition: 0.5s;
-    
 }
 
 .left-arrow,.right-arrow {
@@ -150,13 +142,11 @@ body {
 .right-arrow {
     right: 0;
     top: 45%;
-    
 }
 
 .left-arrow {
     top: 45%;
     left: 0;
-    
 }
 
 .carousel__slide {
@@ -165,7 +155,6 @@ body {
 
 .carousel__slide img {
    width: 100%;
-
 }
 
 .burger-menu {
@@ -222,25 +211,21 @@ body {
     display: none;
     width: 100%;
     height: 1000vh;
-    
 }
 
 .burger-navigation-open {
     display: block;
-    
 }
 
 .burger-navigation__flex {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    
 }
 
 .burger-navigation__flex li {
     border-bottom: 1px solid #d8dfe7;
     padding: 10px 0 10px 10px;
-    
 }
 
 .elements {
@@ -351,7 +336,6 @@ body {
 .info {
     padding: 5px;
     border: 5px outset rgba(48, 46, 36, 0.301);
-    
 }
 
 .info__text {
@@ -378,7 +362,6 @@ body {
     align-items: flex-end;
     row-gap: 15px;
     padding: 20px;
-    
 }
 
 .footer__left div span:hover {
@@ -415,12 +398,10 @@ body {
     width: 50px;
     height: 50px;
     display: block;
-    
 }
 
 .footer__left-icons a:nth-child(1){
     background: url(./images/vk_footer.svg) no-repeat;
-    
 }
 
 .footer__left-icons a:nth-child(2){
@@ -491,14 +472,12 @@ body {
 @media all and (max-width: 1300px) {
     .footer__left div:nth-child(1) span {
         font-size: 3em;
-        
     }
 
     .footer__right .first-col li,
 .footer__right .second-col li,
 .footer__right .third-col li {
     font-size: 1em;
-    
 }
 .first-col__title,
 .second-col__title,
@@ -512,7 +491,6 @@ body {
 
     .footer__left div:nth-child(1) span {
         font-size: 2.5em;
-        
     }
 
     .text-wrapper-max {
@@ -533,7 +511,6 @@ body {
 
     .header__input {
         width: 145px;
-        
     }
 
     .info__text {
@@ -542,9 +519,6 @@ body {
 }
 
 @media all and (max-width: 960px) {
-    .burger-menu {
-        /* display: block; */
-    }
 
     .text-wrapper-max {
         font-size: 1.4em;
@@ -566,10 +540,6 @@ body {
         font-size: 1.6em;
     }
 
-    .carousel {
-        /* width: 860px; */
-    }
-
     .footer {
         font-size:smaller;
     }
@@ -578,12 +548,10 @@ body {
 @media all and (max-width: 890px) {
     .header {
        justify-content: normal;
-       
     }
 
     .header__main {
         margin-left: -25px;
-
     }
 
     .burger-menu {
@@ -629,7 +597,6 @@ body {
 
     html {
         width: fit-content;
-        
     }
 
     .info__text {
@@ -638,7 +605,6 @@ body {
         line-height: 1.4em;
         font-weight: 400;
         letter-spacing: 0.5px;
-        
     }
 
     .close-btn {

@@ -1,4 +1,4 @@
-// window.onbeforeunload = function () {window.scrollTo(0, 0)}; // при обновлении страницы, перематывать её в самый верх, в искходное состояние
+window.onbeforeunload = function () {window.scrollTo(0, 0)}; // при обновлении страницы, перематывать её в самый верх, в искходное состояние
 const elements = document.querySelector(".elements");
 const element = document.querySelectorAll(".element");
 const about_buttons = document.querySelectorAll(".about_btn");
@@ -48,7 +48,6 @@ function carousel() { // функция для слайдера(карусели
                 if(position > minStep*4) {position = 0;carouselTape.style.transition="0s"}
                 else {carouselTape.style.transition="0.5s"}
                 carouselTape.style.transform = `translateX(-${position}px)`
-                
         });
         
         left_arrow.addEventListener("click",(e)=>{
@@ -76,8 +75,6 @@ function writeCode(text_name) { // функция, которая создает
                 }
         },10)      
 }
-
-
 
 for (let i = 0; i < about_buttons.length; i++) {
         about_buttons[i].addEventListener("click",(e)=>{about_section.style.display="block";info_text.textContent = "";about_buttons[i].style.backgroundColor="pink";})
