@@ -1,4 +1,4 @@
-window.onbeforeunload = function () {window.scrollTo(0, 0)}; // при обновлении страницы, перематывать её в самый верх, в искходное состояние
+// window.onbeforeunload = function () {window.scrollTo(0, 0)}; // при обновлении страницы, перематывать её в самый верх, в искходное состояние
 const elements = document.querySelector(".elements");
 const element = document.querySelectorAll(".element");
 const about_buttons = document.querySelectorAll(".about_btn");
